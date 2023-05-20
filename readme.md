@@ -1,8 +1,8 @@
 # Theme Simple
 
-![](\source\img\simple (1).png)
+![](https://raw.githubusercontent.com/yz-hs/Simple/main/source/img/simple (1).png)
 
-![](\source\img\simple (2).png)
+![](https://raw.githubusercontent.com/yz-hs/Simple/main/source/img/simple (2).png)
 
 Theme Simple is a hexo theme, as an example of hexo-theme programming. 
 
