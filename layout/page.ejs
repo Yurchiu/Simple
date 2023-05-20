@@ -1,0 +1,7 @@
+<% if (is_category()||page.type=="categories") { %>
+	<%- partial('category') %>
+<% } else if (is_tag()||page.type=="tags") { %>
+	<%- partial('tags') %>
+<% } else { %>
+	<%- partial('post') %>
+<% } %>

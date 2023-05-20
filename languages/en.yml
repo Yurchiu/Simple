@@ -1,0 +1,40 @@
+Paginator:
+  Prev: Prev
+  Next: Next
+
+Menu:
+  Home: Home
+  Archives: Archives
+  Tags: Tags
+  Categories: Categories
+  About: About
+  Message_board: MsgBoard
+  Links: Links
+  Projects: Projects
+  Say: Complain
+
+Posts:
+  Top: Top
+  Password: Password
+  Share: Share to
+  Author: The author： 
+  Link: The link： 
+  Copyright: Copyright： 
+  Refresh: Refresh： 
+
+Archives:
+  Categories: There are the following articles under the category "%s".
+  Tags: There are the following articles under the tag "%s".
+  Archives: There are currently %d articles. Keep working hard.
+
+Categories: There are currently %d categories.
+
+Tags: There are currently %d tags.
+
+Comments:
+  Unable: Comments are not enabled on this page!
+  Unopen: '%s does not enabled the comments!'
+
+Pages: Page %d
+
+Sidebar_list: Navigate

@@ -1,0 +1,10 @@
+<div class="header">
+    <h1 class="title"> 分类 </h1>
+    <div class="subtitle chaffle" data-lang="zh"> 目前共有 <%= site.categories.length %> 个分类。 </div>
+    <div class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+</div>
+<%- partial('topbar') %>
+<div class="article">
+    <%- list_categories({show_count: false})%>
+    <p class="category-list">就这些。</p>
+</div>

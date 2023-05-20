@@ -1,0 +1,14 @@
+<div class="header">
+  <h1 class="title"> 标签 </h1>
+  <div class="subtitle chaffle" data-lang="zh"> 目前共有 <%= site.tags.length %> 个标签。 </div>
+  <div class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+</div>
+<%- partial('topbar') %>
+<div class="article">
+  <p class="item tag-list">
+    目前的标签有
+    <% site.tags.each(function (tag) { %>
+      ，<a href="/tags/<%= tag.name %>"><%= tag.name %></a>
+    <% }) %>。
+  <p class="item tag-list"> 就这些。 </p>
+</div>

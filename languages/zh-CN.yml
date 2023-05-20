@@ -1,0 +1,40 @@
+Paginator:
+  Prev: 上一页
+  Next: 下一页
+
+Menu:
+  Home: 首页
+  Archives: 归档
+  Tags: 标签
+  Categories: 分类
+  About: 关于
+  Message_board: 留言
+  Links: 链接
+  Projects: 项目
+  Say: 吐槽
+
+Posts:
+  Top: 置顶
+  Password: 加密
+  Share: 分享到
+  Author: 本文作者： 
+  Link: 本文链接： 
+  Copyright: 版权声明： 
+  Refresh: 最后更新： 
+
+Archives:
+  Categories: 分类“%s”下有以下文章。
+  Tags: 标签“%s”下有以下文章。 
+  Archives: 目前共有 %d 篇文章。 继续努力。
+
+Categories: 目前共有 %d 个分类。
+
+Tags: 目前共有 %d 个标签。
+
+Comments:
+  Unable: 本页面并未开启评论功能哦！
+  Unopen: '%s 并未使用评论功能哦！'
+
+Pages: 第%d页
+
+Sidebar_list: 导航

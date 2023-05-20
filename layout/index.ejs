@@ -1,0 +1,50 @@
+<div class="header">
+	<h1 class="title"> <%= config.title %> </h1>
+	<div class="subtitle chaffle" data-lang="zh"> <%= config.subtitle %> </div>
+	<div class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+</div>
+<%- partial('topbar') %>
+<div class="article">
+	<div class="item">
+		<%- partial('notice') %>
+	</div>
+	<% page.posts.each(function (post) { %>
+	<div class="post">
+	  	<h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+		<p>
+			内容摘要：<% if(theme.post_excerpt.mode=="noexcerpt"){ %>
+				<% if(theme.post_excerpt.ifdefault){ %>
+					<%- theme.post_excerpt.post_default_excerpt %>
+				<% }else{ %>
+					<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
+				<% } %>
+			<% }else{ %>
+				<% if(post.excerpt){ %>
+					<% if(theme.post_excerpt.display=="html"){ %>
+						<%- post.excerpt %>
+					<% }else{ %>
+						<%- strip_html(post.excerpt) %>
+					<% } %>
+				<% }else if(theme.post_excerpt.ifdefault){ %>
+					<%- theme.post_excerpt.post_default_excerpt %>
+				<% }else{ %>
+					<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
+				<% } %>
+			<% } %>
+		</p>    
+		<p>
+			作者：<%= config.author %>。
+			本文写于 <%= date(post.date, "YYYY 年 MM 月 DD 日") %> 。
+        	<% if(post.top){ %>
+           		本文章被置顶了。
+        	<% } %>
+        	<% if(post.password){ %>
+        		本文章需要密码才能查看 qwq。
+      		<% } %>
+      	</p>
+    </div>
+    <% if(post.bgimg){ %>
+    <div class="img-post" style="background-image: url(<%= post.bgimg %>);"></div>
+	<% }}) %>
+</div>
+<%- partial('paginator') %>

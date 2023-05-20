@@ -1,0 +1,41 @@
+.header {
+	background-color: $header-bg-color;
+	height: 100vh;
+	border-bottom: solid 1px $header-border-color;
+
+	.title {
+		text-align: center;
+		color: $header-title-color;
+    	padding-top: 40vh;
+    	font-size: 50px;
+    	margin-top: 0;
+    	padding-left: 10px;
+    	padding-right: 10px;
+	}
+
+	.subtitle {
+    	font-size: 12px;
+    	font-weight: 500;
+    	line-height: 22px;
+    	letter-spacing: 7px;
+    	text-transform: uppercase;
+    	color: $header-subtitle-color;
+    	text-align: center;
+
+    	&:before {
+    		content: "/* ";
+    	}
+
+    	&:after {
+    		content: " */";
+    	}
+	}
+
+	.icon {
+		color: $header-fa-color;
+		position: absolute;
+    	bottom: 5px;
+    	left: 50%;
+    	transform: translate(-50%, 0%);
+	}
+}

@@ -1,0 +1,46 @@
+<div class="header">
+  <h1 class="title"> <%= page.title %> </h1>
+  <div class="subtitle chaffle" data-lang="zh"> 本文写于 <%= date(page.date, "YYYY 年 MM 月 DD 日") %> 。 </div>
+  <div class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+</div>
+<%- partial('topbar') %>
+<div class="article">
+  <div class="item">
+    <p>
+	  作者：<%= config.author %>，
+    本文更新于 <%= date(page.updated, theme.time_format) %>。
+	  本文章共有 <%= wordcount(page.content) %> 字。
+      <% if(page.top){ %>
+       本文章被置顶了。
+      <% } %>
+      <% if(page.password){ %>
+       本文章需要密码才能查看 qwq。
+      <% } %>
+    </p>
+  <div>
+    <%- page.content %>
+  </div>
+  <% if(is_post()){ %>
+    <p>
+    	还想阅读更多文章？你可以
+  	  <% if(page.prev){ %>
+  	  	  <a href="<%= url_for(page.prev.path) %>">阅读上一篇</a>
+  	  <% }if(page.next){ %>
+  		  <% if(page.prev){ %>，也可以 <% } %><a href="<%= url_for(page.next.path) %>">阅读下一篇</a>
+  	  <% } %>。
+    </p>
+  <% } %>
+ </div>
+  <div class="container">
+    <% if(page.bgimg){ %>
+      <div class="img-post" style="background-image: url(<%= page.bgimg %>);"></div>
+    <% } %>
+    <% if(toc(page.content,{list_number: false})){ %>
+      <div class="item post-toc">
+        <div class="title">文章目录</div>
+        <%- toc(page.content,{list_number: false,max_depth: page.tocd?page.tocd:3}) %>
+      </div>
+    <% } %>
+    <div class="item"><%- partial('comments') %></div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="footer">
+<p>Theme is simple.</p>
+<p>This Site : Copyright ©2018-2023 Yurchiu. All rights reserved.</p>
+</div>
+
+<!-- 
+!#                                                 #!
+!#                     MathJax                     #!
+!#                                                 #!
+-->
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+<!-- 
+!#                                                 #!
+!#                      其他                        #!
+!#                                                 #!
+-->
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+<script src="/js/SmoothScroll.js"></script>
+<script type="text/javascript" src="/js/chaffle.min.js"></script>
+<link href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.5.0/styles/vs2015.min.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/limonte-sweetalert2/10.12.5/sweetalert2.all.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/sketch.js/1.1/sketch.min.js"></script>
+<script type="text/javascript">
+    hljs.initHighlighting();
+    $(document).ready(function() {
+        $('.chaffle').chaffle();
+    });
+    $(document).pjax('a[target!=_blank][pjax!="no"]', '#pjax', {fragment:'#pjax', timeout:6000});
+    $(document).on('pjax:complete', function() {
+        MathJax.typeset();
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+        $('.chaffle').chaffle();
+
+        var back = document.getElementById('backtop')
+        back.style.display ='none'
+        document.onscroll = function(){
+            if (document.documentElement.scrollTop > 100){
+                back.style.display = 'block'
+            }else{
+                back.style.display = 'none'
+            }
+        };
+        back.onclick = function(){
+            document.documentElement.scrollTop = 0
+        }//back2top
+
+    });//pjax
+</script>
+
+<script>
+    var back = document.getElementById('backtop')
+    back.style.display ='none'
+    document.onscroll = function(){
+        if (document.documentElement.scrollTop > 100){
+            back.style.display = 'block'
+        }else{
+            back.style.display = 'none'
+        }
+    };
+    back.onclick = function(){
+        document.documentElement.scrollTop = 0
+    }//back2top for no pjax
+</script>
+
+<!-- 
+!#                                                 #!
+!#                     页面效果                     #!
+!#                                                 #!
+-->
+
+<script type="text/javascript" src="/js/ctitle.js"></script>
+<script type="text/javascript" src="/js/colored-egg.js"></script>
+<div id="clickCanvas" style=" position: fixed;left: 0;top: 0;z-index: 99999;pointer-events: none;"></div>
+<script type="text/javascript" src="/js/clickple.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>

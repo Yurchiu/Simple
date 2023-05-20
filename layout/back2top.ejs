@@ -1,0 +1,37 @@
+<style>
+	#backtop{
+        background: whitesmoke;
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        z-index: 99;
+        left: 20px;
+        bottom: 20px;
+	   cursor: pointer;
+    }
+#backtop p{
+	margin: 0;
+    line-height: 60px;
+    text-align: center;
+    color: burlywood;
+}
+</style>
+
+<div id="backtop">
+    <p>Top</p>
+</div>
+
+<script>
+    var back = document.getElementById('backtop')
+    back.style.display ='none'
+    document.onscroll = function(){
+        if (document.documentElement.scrollTop > 100){
+            back.style.display = 'block'
+        }else{
+            back.style.display = 'none'
+        }
+    };
+    back.onclick = function(){
+        document.documentElement.scrollTop = 0
+    }
+</script>

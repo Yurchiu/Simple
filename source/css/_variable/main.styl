@@ -1,0 +1,13 @@
+$pc_pe_dividing_1                          = unit(hexo-config('responsive.dividing_1'),px);
+$pc_pe_dividing_2                          = unit(hexo-config('responsive.dividing_2'),px);
+$pc_pe_dividing_3                          = unit(hexo-config('responsive.dividing_3'),px);
+$swal2-z-index                             = 10000;
+
+@import "_variable/color";
+
+if hexo-config('spacial') == "grayscale"
+	@import "_variable/spacial/grayscale";
+else if hexo-config('spacial') == "invert"
+	@import "_variable/spacial/invert";
+else if hexo-config('spacial') == "opacity"
+	@import "_variable/spacial/opacity";

@@ -1,0 +1,42 @@
+<div class="header">
+    <h1 class="title">
+        <% if (page.category) { %>
+          <%= page.category %>
+        <% }else if (page.tag) { %>
+          <%= page.tag %>
+        <% }else{ %>
+          归档
+        <% } %>
+    </h1>
+    <div class="subtitle chaffle" data-lang="zh">
+        <% if (page.category) { %>
+          分类 “<%= page.category %>” 下有以下文章。 
+        <% }else if (page.tag) { %>
+          标签 “<%= page.tag %>” 下有以下文章。 
+        <% }else{ %>
+          目前 <%= config.author %> 写了 <%= site.posts.length %> 篇文章。 继续努力。
+        <% } %>
+    </div>
+    <div class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+</div>
+<%- partial('topbar') %>
+<div class="article">
+    <div class="item archive">
+  	<% var lastyear=new Date().getFullYear(),lastmonth=0; %>
+    <p>在 <%= lastyear %> 年时，<%= config.author %> 写了以下文章：</p>
+    <% page.posts.each(function (post) { %>
+      	<% var year=post.date.year(),month=post.date.month(); %>
+      	<% if(lastyear != year){ %>
+            </div><div class="item archive">
+      		<p>在 <%= year %> 年时，<%= config.author %> 写了以下文章：</p>
+      		<% lastyear=year; %>
+      	<% } %>
+      	<% if(lastmonth != month){ %>
+      		<p> <%= month+1 %> 月，她写了这些：</p>
+      		<% lastmonth=month; %>
+      	<% } %>
+        <p>在本月的 <%= date(post.date, "DD") %> 日，写了一篇“
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>”。</p>
+    <% }) %>
+    </div>
+</div>

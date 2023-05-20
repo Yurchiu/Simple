@@ -1,0 +1,17 @@
+<div class="topbar">
+	<a href="/" class="topbar-title">
+		<i class="fa fa-home" aria-hidden="true"></i> <%= theme.title %>
+	</a>
+	<a onclick="$('.topbar-menu').toggleClass('display');" class="topbar-media">
+		<i class="fa fa-bars" aria-hidden="true"></i>
+	</a>
+	<ul class="topbar-menu">
+  	<% for (name in theme.Menu) { %>
+  		<% if(url_for(page.path)==url_for(theme.Menu[name])) { %>
+  	   		<li class="current"><a href="<%- url_for(theme.Menu[name]) %>"><%- __('Menu.' + name)%></a></li>
+  	   	<% }else{ %>
+  	   		<li><a href="<%- url_for(theme.Menu[name]) %>"><%- __('Menu.' + name)%></a></li>
+  	   	<% } %>
+    <% } %>
+  </ul>
+</div>

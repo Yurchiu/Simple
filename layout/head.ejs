@@ -1,0 +1,55 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <meta name="msvalidate.01" content="9B3D375103339E488A70333B54246AA4" />
+  <meta name="description" content="<%- config.description %>">
+  <meta http-equiv='content-language' content='zh-cn'>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>
+    <% if (page.current>1) { %>
+        <%= _p('Pages',page.current) %> |
+    <% } %>
+
+    <% if(page.title){ %>
+      <%= page.title %> |
+    <% }else if(page.category){ %>
+      <%= __('Menu.Categories') %> <%= page.category %> |
+    <% }else if (page.tag) { %>
+      <%= __('Menu.Tags') %> <%= page.tag %> |
+    <% }else if (page.archive) { %>
+      <%= __('Menu.Archives') %> |
+    <% }else{} %>
+
+    <%= config.title %>
+  </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.6/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <link href="https://fonts.loli.net/css?family=<%- theme.font %>" rel="stylesheet">
+
+  <script type="text/javascript">
+  function changeppt(ppt)
+  {
+      var len=document.querySelector("#"+ppt);
+      var width=parseFloat(window.getComputedStyle(len, null).getPropertyValue('width'));
+      len.style.height=width*0.5757+"px";
+      var width_srceen = screen.width;
+      var new_window_width = $(window.frames[ppt]).width();
+      var multiple =new_window_width/width_srceen;
+      let block=window.frames[ppt].document.querySelectorAll(":not(.poser)");
+      for (var i = 0; i < block.length; i++) {
+        var style = parseFloat(window.getComputedStyle(block[i], null).getPropertyValue('font-size'));
+          var hi = style * multiple;
+          block[i].style.fontSize=hi+"px";
+        style = parseFloat(window.getComputedStyle(block[i], null).getPropertyValue('padding'));
+          hi = style * multiple;
+          block[i].style.padding=hi+"px";
+      }
+  }
+  function recoverppt(ppt){window.frames[ppt].location.reload();}
+  //Simple-PPT
+  </script>
+</head>

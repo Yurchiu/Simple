@@ -1,0 +1,68 @@
+# article settings
+#
+# ---
+# discomments: true                # Used to disable comments in this article or page.
+# bgimg: /path/to/your/pic.img     # Set img for post card.
+# top: [number]                    # Set post display order.
+# tocd: [number]                   # Set toc depth.
+# ---
+
+# Notice Board Setting: /layout/notice.ejs
+
+Menu:
+  Archives: archives/index.html
+  Tags: tags/index.html
+  Categories: categories/index.html
+  About: somepage/about/index.html
+  Message_board: somepage/chat/index.html
+  Links: somepage/link/index.html
+  Projects: somepage/projects/index.html
+  Say: somepage/say/index.html
+
+comments:
+  # LiveRe comments system
+  # You can get your uid from https://livere.com/insight/myCode (General web site)
+  livere:
+    enable: false
+    uid: 
+  # gitalk comments system
+  # see: https://github.com/gitalk/gitalk
+  gitalk:
+    enable: true
+    clientID: "''"
+    clientSecret: "''"
+    repo: "''"
+    owner: "''"
+    admin: "['']"
+    proxy: "''"
+
+responsive:
+  dividing_1: 1230
+  dividing_2: 970
+  dividing_3: 750
+
+post_excerpt:
+  mode: excerpt        # You can set it excerpt|noexcerpt , or default(excerpt).
+                       # excerpt: if a post has "<!--more-->",display it.
+                       # noexcerpt: all posts are considered as having no excerpt.
+
+  ifdefault: false     # if it is true,then if a post has no "<!--more-->",display "post_default_excerpt".
+                       # else display part of content.
+
+  display: html        # You can set it html|text , or default(text).
+                       # html: HTML tags will remain.(Only a post has "<!--more-->")
+                       # text: HTML tags will not remain.
+
+  post_default_excerpt: '<i class="fa fa-warning" aria-hidden="true"></i> 本文章无可提供的摘要qwq。'
+  length_excerpt: 100   # The length of "part of content".Default 30.
+
+title: Yurchiu's Blog
+
+avatar:
+  url: /img/new-avatar.jpg
+
+font: Montserrat
+
+spacial: # value: none | grayscale | invert | opacity (default: none)
+
+time_format: "YYYY 年 MM 月 DD 日"
